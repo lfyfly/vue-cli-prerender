@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h3>{{msg}}</h3>
+    <h3 @click="clickFn">{{msg}}</h3>
     <router-link to="/">to index</router-link>
   </div>
 </template>
@@ -12,12 +12,16 @@ export default {
     return {
       msg: 'this is from about.vue'
     }
+  },
+  methods: {
+    clickFn () {
+      alert('about')
+    }
   }
 }
 </script>
 
 <style lang='scss' scoped>
-.about{
-
+.about {
 }
 </style>

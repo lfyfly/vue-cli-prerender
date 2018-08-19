@@ -60,3 +60,6 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin')
 ```
 
 4. 现在试试npm run build 打包
+- 发现预渲染页面已经生成html在页面中，vue还是会重新渲染一遍一模一样的
+- 仅仅只是生成html，DOM上的事件在vue重新渲染之前是没有绑定的。可操作时间还是要等`app.js`加载执行完成
+- 关于依赖异步请求数据，是不会预渲染的，这是和`ssr`的一个区别
